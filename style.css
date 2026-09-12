@@ -1,0 +1,91 @@
+/* Business Pathfinder — minimalist stylesheet, Apple/Tesla inspired */
+
+:root {
+  --bg: #FFFFFF;
+  --bg-alt: #F5F5F7;
+  --ink: #1D1D1F;
+  --muted: #6E6E73;
+  --green: #3F6F5D;
+  --amber: #C98B3F;
+  --hairline: #E4E1D8;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, 'Inter', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.02em; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+header.site {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255,255,255,0.8); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--hairline);
+}
+nav.wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 52px;
+}
+.brand { font-weight: 600; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
+.navlinks { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+.navlinks a { color: var(--muted); text-decoration: none; font-size: 0.85rem; }
+.navlinks a:hover, .navlinks a[aria-current="page"] { color: var(--ink); }
+
+.hero { text-align: center; padding: 140px 24px 100px; }
+.hero h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); line-height: 1.05; margin-bottom: 22px; }
+.hero p.lede { font-size: clamp(1.15rem, 2vw, 1.4rem); color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
+.cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block; padding: 13px 28px; border-radius: 980px;
+  text-decoration: none; font-size: 0.95rem; font-weight: 500;
+  background: var(--green); color: #fff; border: 1px solid var(--green);
+  transition: opacity 0.15s;
+}
+.btn:hover { opacity: 0.85; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--hairline); }
+
+.statement { padding: 120px 24px; text-align: center; }
+.statement.tint { background: var(--bg-alt); }
+.statement h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); max-width: 760px; margin: 0 auto 20px; line-height: 1.15; }
+.statement p { font-size: 1.15rem; color: var(--muted); max-width: 560px; margin: 0 auto; }
+
+.triad {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--hairline); max-width: 1000px; margin: 64px auto 0;
+  border-radius: 18px; overflow: hidden;
+}
+.triad > div { background: #fff; padding: 40px 30px; text-align: left; }
+.triad .dot { width: 10px; height: 10px; border-radius: 50%; margin-bottom: 18px; }
+.fakten .dot { background: var(--green); }
+.annahmen .dot { background: var(--amber); }
+.schritt .dot { background: var(--ink); }
+.triad h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.triad p { font-size: 0.95rem; color: var(--muted); margin: 0; }
+
+@media (max-width: 760px) { .triad { grid-template-columns: 1fr; border-radius: 12px; } }
+
+.feature-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+  max-width: 1000px; margin: 0 auto; text-align: left;
+}
+.feature-grid .num { font-size: 0.8rem; color: var(--amber); font-weight: 600; margin-bottom: 10px; display: block; }
+.feature-grid h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.feature-grid p { color: var(--muted); font-size: 0.95rem; margin: 0; }
+
+@media (max-width: 760px) { .feature-grid { grid-template-columns: 1fr; } }
+
+footer.site {
+  border-top: 1px solid var(--hairline); padding: 44px 24px; text-align: center;
+  color: var(--muted); font-size: 0.85rem;
+}
+footer.site a { color: var(--muted); margin: 0 10px; text-decoration: none; }
