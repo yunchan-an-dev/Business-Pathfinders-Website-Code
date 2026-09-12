@@ -45,6 +45,40 @@ nav.wrap {
 .hero p.lede { font-size: clamp(1.15rem, 2vw, 1.4rem); color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
 .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+/* Startseite: Hero mit Hintergrundbild, Verlauf-Overlay und Einblend-Animation */
+.hero-home {
+  position: relative;
+  padding: 160px 24px 120px;
+  background-image:
+    linear-gradient(135deg, rgba(140,82,255,0.82), rgba(92,225,230,0.72)),
+    url('images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.hero-home .wrap { position: relative; z-index: 1; }
+.hero-home h1 {
+  background: linear-gradient(135deg, #ffffff, #f2f2ff);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  opacity: 0; transform: translateY(18px);
+  animation: heroHeadlineIn 0.8s ease-out 0.15s forwards;
+}
+.hero-home p.lede {
+  color: rgba(255,255,255,0.92);
+  opacity: 0; animation: heroFadeIn 0.8s ease-out 0.5s forwards;
+}
+.hero-home .cta-row { opacity: 0; animation: heroFadeIn 0.8s ease-out 0.75s forwards; }
+.hero-home .btn.ghost { color: #fff; border-color: rgba(255,255,255,0.6); }
+
+@keyframes heroHeadlineIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .btn {
   display: inline-block; padding: 13px 28px; border-radius: 980px;
   text-decoration: none; font-size: 0.95rem; font-weight: 500;
