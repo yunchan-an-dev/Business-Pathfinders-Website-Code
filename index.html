@@ -17,7 +17,7 @@
     <ul class="navlinks">
       <li><a href="index.html" aria-current="page">Start</a></li>
       <li><a href="leistungen.html">Leistungen</a></li>
-      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="ueber-uns.html">Über mich</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="newsletter.html">Newsletter</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
@@ -27,7 +27,7 @@
 
 <section class="hero hero-home">
   <div class="wrap">
-    <h1>Klarheit für<br>euer Business.</h1>
+    <h1 id="hero-title">Klarheit für euer Business.</h1>
     <p class="lede">Eine strukturierte Außensicht auf Geschäftsmodell, Zielgruppe, Markt und Wirtschaftlichkeit. Ohne Übertreibungen, mit klaren Grenzen.</p>
     <div class="cta-row">
       <a class="btn" href="kontakt.html">Analyse anfragen</a>
@@ -35,6 +35,31 @@
     </div>
   </div>
 </section>
+
+<script>
+(function () {
+  var el = document.getElementById('hero-title');
+  if (!el) return;
+  var text = 'Klarheit für euer Business.';
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    el.textContent = text;
+    el.classList.add('typed-done');
+    return;
+  }
+  var i = 0;
+  el.textContent = '';
+  (function type() {
+    el.textContent = text.slice(0, i);
+    if (i <= text.length) {
+      i++;
+      setTimeout(type, 42);
+    } else {
+      el.classList.add('typed-done');
+    }
+  })();
+})();
+</script>
 
 <section class="statement">
   <div class="wrap">
@@ -122,10 +147,10 @@
 
 <section class="statement">
   <div class="wrap">
-    <h2 style="font-size:2.1rem;">Ehrlich über unseren Stand.</h2>
-    <p>Business Pathfinder befindet sich in einer Lern- und Aufbauphase. Unsere Erfahrung stammt aus eigenen Businessprojekten und ersten realen Kundenfällen, nicht aus jahrzehntelanger Beratungspraxis.</p>
+    <h2 style="font-size:2.1rem;">Ehrlich über meinen Stand.</h2>
+    <p>Business Pathfinder befindet sich in einer Lern- und Aufbauphase. Meine Erfahrung stammt aus eigenen Businessprojekten und ersten realen Kundenfällen, nicht aus jahrzehntelanger Beratungspraxis.</p>
     <div class="cta-row" style="margin-top:32px;">
-      <a class="btn ghost" href="ueber-uns.html">Mehr über uns</a>
+      <a class="btn ghost" href="ueber-uns.html">Mehr über mich</a>
     </div>
   </div>
 </section>
