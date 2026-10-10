@@ -1,4 +1,4 @@
-/* Business Pathfinder — minimalist stylesheet, Apple/Tesla inspired */
+/* Business Pathfinder / Yunchan An — redaktioneller Personal-Branding-Stil */
 
 :root {
   --bg: #FFFFFF;
@@ -23,27 +23,25 @@ body {
 }
 
 h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.02em; }
+img { max-width: 100%; height: auto; display: block; }
 
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+section { padding: 72px 0; }
 
+/* Navigation */
 header.site {
   position: sticky; top: 0; z-index: 20;
-  background: rgba(255,255,255,0.8); backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.86); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--hairline);
 }
-nav.wrap {
-  display: flex; align-items: center; justify-content: space-between;
-  height: 52px;
-}
+nav.wrap { display: flex; align-items: center; justify-content: space-between; height: 52px; }
 .brand { font-weight: 600; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
-.navlinks { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+.navlinks { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
 .navlinks a { color: var(--muted); text-decoration: none; font-size: 0.85rem; }
 .navlinks a:hover, .navlinks a[aria-current="page"] { color: var(--ink); }
 
 .nav-toggle { display: none; }
-.nav-burger {
-  display: none; width: 26px; height: 20px; position: relative; cursor: pointer;
-}
+.nav-burger { display: none; width: 26px; height: 20px; position: relative; cursor: pointer; }
 .nav-burger span, .nav-burger span::before, .nav-burger span::after {
   content: ''; position: absolute; left: 0; width: 100%; height: 2px;
   background: var(--ink); transition: transform 0.2s;
@@ -53,7 +51,7 @@ nav.wrap {
 .nav-burger span::after { top: 8px; }
 
 @media (max-width: 760px) {
-  nav.wrap { height: 52px; flex-wrap: wrap; }
+  nav.wrap { flex-wrap: wrap; }
   .nav-burger { display: block; }
   .navlinks {
     display: none; flex-direction: column; gap: 0;
@@ -68,58 +66,7 @@ nav.wrap {
   .nav-toggle:checked ~ .nav-burger span::after { top: 0; transform: rotate(-45deg); }
 }
 
-.hero { text-align: center; padding: 140px 24px 100px; }
-.hero h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); line-height: 1.05; margin-bottom: 22px; }
-.hero p.lede { font-size: clamp(1.15rem, 2vw, 1.4rem); color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
-.cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-/* Startseite: Hero mit Hintergrundfoto, dunklem Overlay (kein Farbverlauf) */
-.hero-home {
-  position: relative;
-  padding: 160px 24px 120px;
-  min-height: 78vh;
-  display: flex; align-items: center;
-  background-image:
-    linear-gradient(rgba(10,10,12,0.62), rgba(10,10,12,0.62)),
-    url('images/hero-start.jpg');
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-}
-.hero-home .wrap { position: relative; z-index: 1; width: 100%; }
-.hero-home h1 {
-  color: #fff;
-  display: inline-block;
-  border-right: 3px solid rgba(255,255,255,0.85);
-  padding-right: 6px;
-  animation: heroCursor 0.8s steps(1) infinite;
-}
-.hero-home h1.typed-done { animation: none; border-right-color: transparent; }
-.hero-home p.lede { color: rgba(255,255,255,0.92); }
-.hero-home .btn.ghost { color: #fff; border-color: rgba(255,255,255,0.6); }
-
-@keyframes heroCursor { 50% { border-color: transparent; } }
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-home h1 { animation: none; border-right-color: transparent; }
-}
-
-/* Über mich: Hero mit Portraitfoto, leichtes Overlay, Foto bleibt gut sichtbar */
-.hero-about {
-  position: relative;
-  min-height: 420px;
-  display: flex; align-items: flex-end;
-  padding: 24px;
-  background-image:
-    linear-gradient(rgba(8,8,10,0.05), rgba(8,8,10,0.55)),
-    url('images/profil-yunchan.jpg');
-  background-size: cover;
-  background-position: center 18%;
-}
-.hero-about .wrap { width: 100%; padding-bottom: 32px; }
-.hero-about .kicker { color: rgba(255,255,255,0.85); }
-.hero-about h1 { color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
-
+/* Buttons */
 .btn {
   display: inline-block; padding: 13px 28px; border-radius: 980px;
   text-decoration: none; font-size: 0.95rem; font-weight: 500;
@@ -128,66 +75,38 @@ nav.wrap {
 }
 .btn:hover { opacity: 0.85; }
 .btn.ghost { background: transparent; color: var(--ink); border-color: var(--hairline); }
+.cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
 
-.statement { padding: 120px 24px; text-align: center; }
+/* Intro / Hero: redaktionell, Foto neben Text, kein Overlay, keine Animation */
+.intro { padding: 92px 24px 64px; }
+.intro .wrap { display: flex; align-items: center; gap: 56px; }
+.intro-photo { flex: 0 0 280px; }
+.intro-photo img { border-radius: 10px; }
+.intro-text { flex: 1; min-width: 0; }
+.intro-text .kicker { margin-bottom: 14px; }
+.intro-text h1 { font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.18; margin-bottom: 18px; }
+.intro-text p.lede { font-size: 1.08rem; color: var(--muted); max-width: 560px; margin: 0 0 28px; }
+
+@media (max-width: 760px) {
+  .intro { padding: 56px 24px 40px; }
+  .intro .wrap { flex-direction: column; gap: 28px; text-align: left; }
+  .intro-photo { flex-basis: auto; width: 180px; }
+}
+
+/* Statement-Abschnitte (Übergabe-Texte, Abschlussabsätze) */
+.statement { padding: 96px 24px; text-align: center; }
 .statement.tint { background: var(--bg-alt); }
-.statement h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); max-width: 760px; margin: 0 auto 20px; line-height: 1.15; }
-.statement p { font-size: 1.15rem; color: var(--muted); max-width: 560px; margin: 0 auto; }
+.statement h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); max-width: 720px; margin: 0 auto 18px; line-height: 1.2; }
+.statement p { font-size: 1.05rem; color: var(--muted); max-width: 560px; margin: 0 auto; }
 
-.triad {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
-  background: var(--hairline); max-width: 1000px; margin: 64px auto 0;
-  border-radius: 18px; overflow: hidden;
-}
-.triad > div { background: #fff; padding: 40px 30px; text-align: left; }
-.triad .dot { width: 10px; height: 10px; border-radius: 50%; margin-bottom: 18px; }
-.fakten .dot { background: var(--green); }
-.annahmen .dot { background: var(--amber); }
-.schritt .dot { background: var(--ink); }
-.triad h3 { font-size: 1.05rem; margin-bottom: 8px; }
-.triad p { font-size: 0.95rem; color: var(--muted); margin: 0; }
-
-@media (max-width: 760px) { .triad { grid-template-columns: 1fr; border-radius: 12px; } }
-
-.feature-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
-  max-width: 1000px; margin: 0 auto; text-align: left;
-}
-.feature-grid .num { font-size: 0.8rem; color: var(--amber); font-weight: 600; margin-bottom: 10px; display: block; }
-.feature-grid h3 { font-size: 1.05rem; margin-bottom: 8px; }
-.feature-grid p { color: var(--muted); font-size: 0.95rem; margin: 0; }
-
-@media (max-width: 760px) { .feature-grid { grid-template-columns: 1fr; } }
-
-.ablauf { list-style: none; margin: 56px auto 0; padding: 0; max-width: 700px; }
-.ablauf li {
-  display: flex; gap: 20px; align-items: flex-start;
-  padding: 22px 0; border-top: 1px solid var(--hairline); text-align: left;
-}
-.ablauf li:last-child { border-bottom: 1px solid var(--hairline); }
-.ablauf-num {
-  flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%;
-  background: var(--green); color: #fff; display: flex; align-items: center;
-  justify-content: center; font-weight: 600; font-size: 0.9rem;
-}
-.ablauf h3 { font-size: 1rem; margin-bottom: 4px; }
-.statement .ablauf p { margin: 0; max-width: none; text-align: left; font-size: 0.92rem; color: var(--muted); }
-
-footer.site {
-  border-top: 1px solid var(--hairline); padding: 44px 24px; text-align: center;
-  color: var(--muted); font-size: 0.85rem;
-}
-footer.site a { color: var(--muted); margin: 0 10px; text-decoration: none; }
-
-/* Basiselemente, die auf mehreren Unterseiten verwendet werden */
-img { max-width: 100%; height: auto; display: block; }
-
-section { padding: 72px 0; }
-
+/* Allgemeine Bausteine */
 .kicker {
   text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem;
   font-weight: 600; color: var(--green); margin-bottom: 16px;
 }
+.section-head { text-align: center; margin-bottom: 44px; }
+.section-head h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 10px; }
+.section-head p { color: var(--muted); max-width: 560px; margin: 0 auto; }
 
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; text-align: left; }
 .grid-2 p { color: var(--muted); }
@@ -197,23 +116,56 @@ section { padding: 72px 0; }
 .plain .num { font-size: 0.8rem; color: var(--amber); font-weight: 600; flex-shrink: 0; width: 22px; }
 
 .alt { background: var(--bg-alt); }
-.section-head { text-align: center; margin-bottom: 44px; }
-.section-head h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
 
 .transparency {
   border-left: 3px solid var(--amber); background: var(--bg-alt);
   padding: 24px 28px; border-radius: 4px; text-align: left;
 }
-.transparency h2 { margin-bottom: 10px; text-align: left; }
+.transparency h2, .transparency h3 { margin-bottom: 10px; text-align: left; }
 .transparency p { margin: 0; max-width: none; text-align: left; }
 
 .disclaimer { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 32px; }
 
+/* Woran ich gerade arbeite: Projektliste, kein Icon-Raster, keine Nummerierung */
+.projects { list-style: none; margin: 40px auto 0; padding: 0; max-width: 760px; text-align: left; display: flex; flex-direction: column; gap: 0; }
+.projects li { padding: 32px 0; border-top: 1px solid var(--hairline); }
+.projects li:last-child { border-bottom: 1px solid var(--hairline); }
+.projects h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.projects p { color: var(--muted); margin: 0 0 12px; font-size: 0.98rem; }
+.projects .links { display: flex; gap: 20px; flex-wrap: wrap; }
+.projects .links a { font-size: 0.88rem; color: var(--green); text-decoration: none; font-weight: 500; }
+.projects .links a:hover { text-decoration: underline; }
+
+/* Verlauf: datierte, chronologische Liste */
+.timeline { list-style: none; margin: 40px auto 0; padding: 0; max-width: 700px; text-align: left; }
+.timeline li { display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid var(--hairline); }
+.timeline li:last-child { border-bottom: 1px solid var(--hairline); }
+.timeline time { flex: 0 0 112px; font-size: 0.85rem; color: var(--muted); font-weight: 600; padding-top: 1px; }
+.timeline .entry { flex: 1; min-width: 0; }
+.timeline .entry h3 { font-size: 0.98rem; margin-bottom: 2px; }
+.timeline .entry p { margin: 4px 0 0; color: var(--muted); font-size: 0.92rem; }
+
+@media (max-width: 600px) {
+  .timeline li { flex-direction: column; gap: 4px; }
+  .timeline time { flex-basis: auto; }
+}
+
+/* Kundenprojekte / Testimonial */
+.testimonial {
+  border-left: 3px solid var(--green); background: var(--bg-alt);
+  padding: 22px 28px; margin: 28px auto 0; max-width: 620px; text-align: left; border-radius: 4px;
+}
+.testimonial p { font-style: italic; color: var(--ink); margin: 0 0 10px; font-size: 1rem; }
+.testimonial footer { font-size: 0.85rem; color: var(--muted); font-style: normal; }
+
+footer.site {
+  border-top: 1px solid var(--hairline); padding: 44px 24px; text-align: center;
+  color: var(--muted); font-size: 0.85rem;
+}
+footer.site a { color: var(--muted); margin: 0 10px; text-decoration: none; }
+
 @media (max-width: 760px) {
   section { padding: 52px 0; }
-  .hero { padding: 110px 24px 70px; }
-  .hero-home { padding: 130px 24px 90px; min-height: 60vh; }
-  .hero-about { min-height: 340px; }
-  .statement { padding: 70px 24px; }
+  .statement { padding: 64px 24px; }
   .grid-2 { grid-template-columns: 1fr; gap: 36px; }
 }

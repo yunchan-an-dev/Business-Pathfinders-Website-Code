@@ -3,163 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Pathfinder — Analyse und Sparring für Gründer</title>
-<meta name="description" content="Business Pathfinder analysiert Geschäftsmodell, Zielgruppe, Markt und Wirtschaftlichkeit für junge Gründer und kleine Unternehmen.">
+<title>Yunchan An — Business Pathfinder, BusiCoffee und eigene Softwareprojekte</title>
+<meta name="description" content="Yunchan An, Schüler in Berlin. Hier dokumentiere ich, woran ich arbeite: Business Pathfinder, der Newsletter BusiCoffee und eigene Softwareprojekte.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site">
   <nav class="wrap">
-    <a href="index.html" class="brand">Business Pathfinder</a>
+    <a href="#top" class="brand">Yunchan An</a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <label for="nav-toggle" class="nav-burger" aria-label="Menü öffnen"><span></span></label>
     <ul class="navlinks">
-      <li><a href="index.html" aria-current="page">Start</a></li>
-      <li><a href="leistungen.html">Leistungen</a></li>
-      <li><a href="ueber-uns.html">Über mich</a></li>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="newsletter.html">Newsletter</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="#projekte">Woran ich arbeite</a></li>
+      <li><a href="#verlauf">Verlauf</a></li>
+      <li><a href="#kundenprojekte">Kundenprojekte</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="hero hero-home">
+<section class="intro" id="top">
   <div class="wrap">
-    <h1 id="hero-title">Klarheit für euer Business.</h1>
-    <p class="lede">Eine strukturierte Außensicht auf Geschäftsmodell, Zielgruppe, Markt und Wirtschaftlichkeit. Ohne Übertreibungen, mit klaren Grenzen.</p>
-    <div class="cta-row">
-      <a class="btn" href="kontakt.html">Analyse anfragen</a>
-      <a class="btn ghost" href="leistungen.html">Leistungen ansehen</a>
+    <div class="intro-photo">
+      <img src="images/profil-yunchan.jpg" alt="Porträt von Yunchan An" width="600" height="800">
     </div>
-  </div>
-</section>
-
-<script>
-(function () {
-  var el = document.getElementById('hero-title');
-  if (!el) return;
-  var text = 'Klarheit für euer Business.';
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion) {
-    el.textContent = text;
-    el.classList.add('typed-done');
-    return;
-  }
-  var i = 0;
-  el.textContent = '';
-  (function type() {
-    el.textContent = text.slice(0, i);
-    if (i <= text.length) {
-      i++;
-      setTimeout(type, 42);
-    } else {
-      el.classList.add('typed-done');
-    }
-  })();
-})();
-</script>
-
-<section class="statement">
-  <div class="wrap">
-    <h2>Ablauf</h2>
-    <p>So läuft eine Zusammenarbeit von der Anfrage bis zum Abschluss ab.</p>
-    <ol class="ablauf">
-      <li>
-        <span class="ablauf-num">1</span>
-        <div><h3>Fragebogen ausfüllen</h3><p>Ihr beantwortet unseren strukturierten Fragebogen zu eurem Business.</p></div>
-      </li>
-      <li>
-        <span class="ablauf-num">2</span>
-        <div><h3>Wir lesen durch</h3><p>Wir prüfen eure Angaben sorgfältig und ordnen sie ein.</p></div>
-      </li>
-      <li>
-        <span class="ablauf-num">3</span>
-        <div><h3>Rückmeldung per Telefonat</h3><p>Ein kurzes Telefonat klärt offene Fragen, die sich aus eurem Fragebogen ergeben.</p></div>
-      </li>
-      <li>
-        <span class="ablauf-num">4</span>
-        <div><h3>Analyse und Diagnose</h3><p>Im Hintergrund erarbeiten wir die inhaltliche Auswertung eures Falls.</p></div>
-      </li>
-      <li>
-        <span class="ablauf-num">5</span>
-        <div><h3>Bericht nach einer Woche</h3><p>Ihr erhaltet den vollständigen Bericht innerhalb von einer Woche.</p></div>
-      </li>
-      <li>
-        <span class="ablauf-num">6</span>
-        <div><h3>Feedback und Rückmeldung</h3><p>Wir besprechen die Ergebnisse gemeinsam und nehmen eure Rückmeldung auf.</p></div>
-      </li>
-      <li>
-        <span class="ablauf-num">7</span>
-        <div><h3>Aftercare</h3><p>Auch danach bleiben wir für weitere Fragen zu eurem Business erreichbar.</p></div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="statement">
-  <div class="wrap">
-    <h2>Fakten, Annahmen, nächster Schritt.</h2>
-    <p>Wir trennen klar, was wir wissen, was wir annehmen, und was als nächstes zu klären ist.</p>
-    <div class="triad">
-      <div class="fakten">
-        <div class="dot"></div>
-        <h3>Fakten</h3>
-        <p>Geschäftsmodell und Kennzahlen, die ihr uns liefert, bilden die Grundlage jeder Analyse.</p>
-      </div>
-      <div class="annahmen">
-        <div class="dot"></div>
-        <h3>Annahmen</h3>
-        <p>Wo Informationen fehlen oder unsicher sind, benennen wir das offen, statt es zu überspielen.</p>
-      </div>
-      <div class="schritt">
-        <div class="dot"></div>
-        <h3>Nächster Schritt</h3>
-        <p>Am Ende steht eine nachvollziehbare Einschätzung mit konkreten nächsten Schritten.</p>
+    <div class="intro-text">
+      <div class="kicker">Hallo, ich bin</div>
+      <h1>Yunchan An.</h1>
+      <p class="lede">Ich gehe in Berlin zur Schule und mache 2027 mein Abitur. Danach beginne ich ein duales Studium in Wirtschaftsinformatik bei Siemens Energy. Nebenher baue ich Business Pathfinder auf, schreibe jeden Montag den Newsletter BusiCoffee und programmiere eigene kleine Anwendungen. Nichts davon ist fertig, und genau das zeige ich hier.</p>
+      <div class="cta-row">
+        <a class="btn" href="#projekte">Woran ich arbeite</a>
+        <a class="btn ghost" href="#kontakt">Kontakt aufnehmen</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="statement tint">
+<section class="alt" id="projekte">
   <div class="wrap">
-    <h2 style="font-size:2rem; margin-bottom:56px;">Was wir uns ansehen</h2>
-    <div class="feature-grid">
-      <div>
-        <span class="num">01</span>
-        <h3>Geschäftsmodell</h3>
-        <p>Einnahmequellen, Zielgruppe, Kundenproblem und Kaufverhalten.</p>
-      </div>
-      <div>
-        <span class="num">02</span>
-        <h3>Markt</h3>
-        <p>Wettbewerb, Positionierung, Marketing und Vertrieb.</p>
-      </div>
-      <div>
-        <span class="num">03</span>
-        <h3>Wirtschaftlichkeit</h3>
-        <p>Umsatz, Kosten, Marge und Wachstumsoptionen.</p>
-      </div>
+    <div class="section-head">
+      <h2>Woran ich gerade arbeite</h2>
+      <p>Drei laufende Projekte. Die Richtung ändert sich bei einigen noch, das steht jeweils dabei.</p>
+    </div>
+    <ul class="projects">
+      <li>
+        <h3>Business Pathfinder</h3>
+        <p>Seit März 2026 erstelle ich strukturierte Fragebögen und Analysen für junge Gründerinnen und Gründer. Ich schaue mir Geschäftsmodell, Zielgruppe, Markt und Wirtschaftlichkeit an und trenne dabei sauber zwischen Fakten, Annahmen und offenen Punkten.</p>
+        <p>Was ich nicht anbiete: Steuerberatung, Rechtsberatung, Wirtschaftsprüfung und eine Garantie für Umsatz oder Erfolg. Für die Analysen nutze ich geschützte Schnittstellen, ein Training von KI Modellen mit Kundendaten ist vertraglich ausgeschlossen, und persönliche Klarnamen werden vor der Verarbeitung anonymisiert.</p>
+        <div class="transparency" style="margin:16px 0;">
+          <h3 style="font-size:1rem;">Wo ich gerade stehe</h3>
+          <p>Ich bin noch am Anfang. Meine Erfahrung stammt aus eigenen Projekten und ersten echten Kundenfällen, nicht aus jahrzehntelanger Beratungspraxis. Auch das Angebot selbst ist nicht festgelegt: Ich teste gerade, ob es eine kleine Nische mit wiederkehrenden Entscheidungen im Gründungsalltag gibt, für die sich ein eigenes Werkzeug lohnt.</p>
+        </div>
+        <div class="links">
+          <a href="https://tally.so/r/GxAL8e" target="_blank" rel="noopener">Fragebogen für Prelaunch</a>
+          <a href="https://tally.so/r/Me6xXk" target="_blank" rel="noopener">Fragebogen für Skalierung und Verbesserung</a>
+          <a href="https://tally.so/r/q4Orv2" target="_blank" rel="noopener">Erstes eigenes Business planen</a>
+        </div>
+      </li>
+      <li>
+        <h3>BusiCoffee</h3>
+        <p>Mein kostenloser Newsletter, jeden Montagmorgen. Er enthält meine Ergebnisse, Erfolge, Angebote, Learnings, kostenlose Benefits, Events und ab und zu ein Geschenk. Kurz gehalten, damit man ihn bei einer Tasse Kaffee liest.</p>
+        <div class="links">
+          <a href="https://tally.so/r/2EJDaj" target="_blank" rel="noopener">Newsletter anmelden</a>
+        </div>
+      </li>
+      <li>
+        <h3>Eigene Softwareprojekte</h3>
+        <p>Seit Juni 2026 bringe ich mir Programmieren selbst bei und baue kleine Desktopanwendungen mit Python. Zwei davon sind FocusGuard, ein digitaler Aufmerksamkeitswächter, und die Self Improvement Library, ein persönlicher Informationsmanager. Beide sind frühe Versionen. Welches Softwareprodukt daraus später entsteht, ist offen.</p>
+        <div class="links">
+          <a href="https://github.com/yunchan-an-dev" target="_blank" rel="noopener">Code auf GitHub</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="verlauf">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Verlauf</h2>
+      <p>Stationen und Entscheidungen der letzten Monate, mit Datum.</p>
+    </div>
+    <ul class="timeline">
+      <li>
+        <time>02/2025 bis 09/2025</time>
+        <div class="entry"><h3>Erstes eigenes Produkt: Gehirnhack</h3><p>Unter dem Namen AmbiLeaders habe ich ein 90 Seiten starkes digitales Buch geplant, geschrieben und veröffentlicht.</p></div>
+      </li>
+      <li>
+        <time>03/2026</time>
+        <div class="entry"><h3>Business Pathfinder gestartet</h3><p>Erste Fragebögen und Analysen für junge Gründerinnen und Gründer.</p></div>
+      </li>
+      <li>
+        <time>05/2026</time>
+        <div class="entry"><h3>Mitglied im Young Founders Network e.V.</h3><p>Austausch mit jungen Gründerinnen und Gründern aus ganz Deutschland.</p></div>
+      </li>
+      <li>
+        <time>06/2026</time>
+        <div class="entry"><h3>Programmieren angefangen</h3><p>Erste Python Anwendungen, Code liegt auf GitHub.</p></div>
+      </li>
+      <li>
+        <time>09/2026</time>
+        <div class="entry"><h3>Umfrage zur neuen Produktrichtung</h3><p>Ich habe eine Umfrage zu Entscheidungsproblemen im Gründungsalltag veröffentlicht. Ergebnis: 51 Besuche, 12 Starts, 3 vollständige Antworten, und keine davon passte zu den Nischen, die ich vorher im Kopf hatte. Die Richtung bleibt damit offen.</p></div>
+      </li>
+      <li>
+        <time>2026</time>
+        <div class="entry"><h3>Zusage für das duale Studium</h3><p>Ich habe die Zusage von Siemens Energy für ein duales Studium in Wirtschaftsinformatik erhalten und angenommen. Start ist nach dem Abitur 2027.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt" id="kundenprojekte">
+  <div class="wrap" style="text-align:center;">
+    <div class="section-head">
+      <h2>Kundenprojekte</h2>
+      <p>Ich zeige hier bewusst nur, was ein Kunde freigegeben hat.</p>
+    </div>
+    <p style="max-width:620px; margin:0 auto; color:var(--muted);">Für Marlon, der einen Spielladen im Onlinehandel betreibt, habe ich eine ausführliche Geschäftsanalyse erstellt. Das war einer meiner ersten Kundenfälle.</p>
+    <div class="testimonial">
+      <p>„Sehr ausführliches, detailliertes, hilfreiches und ehrliches Feedback. Keine hingerotzte KI-Zusammenfassung. Man merkt, dass du dich wirklich intensiv mit dem Projekt beschäftigt hast. Ein neutraler, strategischer Blick von außen tut hier sehr gut.“</p>
+      <footer>Marlon, Spielladen im Onlinehandel</footer>
     </div>
   </div>
 </section>
 
-<section class="statement">
-  <div class="wrap">
-    <h2 style="font-size:2.1rem;">Ehrlich über meinen Stand.</h2>
-    <p>Business Pathfinder befindet sich in einer Lern- und Aufbauphase. Meine Erfahrung stammt aus eigenen Businessprojekten und ersten realen Kundenfällen, nicht aus jahrzehntelanger Beratungspraxis.</p>
-    <div class="cta-row" style="margin-top:32px;">
-      <a class="btn ghost" href="ueber-uns.html">Mehr über mich</a>
+<section id="kontakt">
+  <div class="wrap" style="text-align:center;">
+    <div class="section-head">
+      <h2>Kontakt</h2>
+      <p>Schreib mir eine Nachricht oder frag ein kurzes Gespräch an. Ich antworte persönlich.</p>
+    </div>
+    <div class="cta-row" style="justify-content:center;">
+      <a class="btn" href="mailto:hello.business.pathfinder@gmail.com?subject=Nachricht%20von%20deiner%20Website">Mail schreiben</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/yunchan-an-642a49323/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <footer class="site">
-  <div>Business Pathfinder · Berlin</div>
-  <div style="margin-top:10px;">
-    <a href="kontakt.html">Kontakt</a>
-    <a href="impressum.html">Impressum &amp; Datenschutz</a>
+  <div class="wrap">
+    <div>Yunchan An · Berlin</div>
+    <nav>
+      <a href="#kontakt">Kontakt</a>
+      <a href="impressum.html">Impressum &amp; Datenschutz</a>
+    </nav>
   </div>
 </footer>
 
