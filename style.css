@@ -77,20 +77,79 @@ nav.wrap { display: flex; align-items: center; justify-content: space-between; h
 .btn.ghost { background: transparent; color: var(--ink); border-color: var(--hairline); }
 .cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
 
-/* Intro / Hero: redaktionell, Foto neben Text, kein Overlay, keine Animation */
-.intro { padding: 92px 24px 64px; }
-.intro .wrap { display: flex; align-items: center; gap: 56px; }
-.intro-photo { flex: 0 0 280px; }
-.intro-photo img { border-radius: 10px; }
+/* Hero: ohne Foto ruhig dunkel, Foto später über eine einzige Variable.
+   Foto einsetzen:  .hero { --hero-image: url('images/hero.jpg'); }
+   Overlay stärker oder schwächer: --hero-overlay (0 bis 1). Helles Overlay: --hero-overlay-color. */
+.hero {
+  --hero-image: none;
+  --hero-overlay: 0.5;
+  --hero-overlay-color: 10, 10, 12;
+  position: relative; isolation: isolate;
+  min-height: calc(100vh - 52px); min-height: calc(100svh - 52px);
+  display: flex; align-items: center;
+  padding: 96px 0;
+  background: #101112; color: #fff;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0; z-index: -2;
+  background-image: var(--hero-image); background-size: cover; background-position: center;
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: rgba(var(--hero-overlay-color), var(--hero-overlay));
+}
+.hero .wrap { width: 100%; }
+.hero h1 {
+  font-size: clamp(2.2rem, 6.2vw, 4.6rem); line-height: 1.1; letter-spacing: -0.03em;
+  max-width: 15em; margin-bottom: 28px;
+}
+.hero .lede { font-size: clamp(1.05rem, 2vw, 1.3rem); color: rgba(255,255,255,0.8); max-width: 34em; margin: 0 0 44px; }
+.hero-links { display: flex; gap: 32px; flex-wrap: wrap; margin: 0; }
+.hero-links a {
+  color: #fff; text-decoration: none; font-size: 0.95rem;
+  padding-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,0.45);
+}
+.hero-links a:hover, .hero-links a:focus-visible { border-bottom-color: #fff; }
+
+/* Philosophie: Typografie statt Karten */
+.philosophy { padding: 120px 0; }
+.philosophy h2 { font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--muted); font-weight: 500; letter-spacing: 0; margin-bottom: 20px; }
+.vision { font-size: clamp(1.05rem, 1.8vw, 1.2rem); color: var(--ink); max-width: 34em; margin: 0 0 64px; }
+.beliefs { list-style: none; margin: 0; padding: 0; }
+.beliefs li {
+  display: grid; grid-template-columns: 56px 150px 1fr; gap: 0 24px; align-items: baseline;
+  padding: 36px 0; border-top: 1px solid var(--hairline);
+}
+.beliefs li:last-child { border-bottom: 1px solid var(--hairline); }
+.belief-num, .belief-label { font-size: 0.85rem; color: var(--muted); }
+.beliefs p { margin: 0; font-size: clamp(1.5rem, 3.6vw, 2.5rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 600; }
+
+/* Learnings pro Projekt */
+.learning { font-size: 0.92rem; }
+
+/* Über mich: Foto neben kurzem Text */
+.about { padding: 72px 0; }
+.about .wrap { display: flex; align-items: center; gap: 48px; }
+.intro-photo { flex: 0 0 200px; }
+.intro-photo img { border-radius: 6px; }
 .intro-text { flex: 1; min-width: 0; }
-.intro-text .kicker { margin-bottom: 14px; }
-.intro-text h1 { font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.18; margin-bottom: 18px; }
-.intro-text p.lede { font-size: 1.08rem; color: var(--muted); max-width: 560px; margin: 0 0 28px; }
+.intro-text h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 12px; }
+.intro-text .lede { color: var(--muted); max-width: 34em; margin: 0; }
+
+/* Austausch / Kontakt */
+.contact { padding: 120px 0; text-align: center; border-top: 1px solid var(--hairline); }
+.contact h2 { font-size: clamp(1.8rem, 4.5vw, 3rem); margin-bottom: 18px; }
+.contact .lede { color: var(--muted); max-width: 34em; margin: 0 auto 32px; }
 
 @media (max-width: 760px) {
-  .intro { padding: 56px 24px 40px; }
-  .intro .wrap { flex-direction: column; gap: 28px; text-align: left; }
-  .intro-photo { flex-basis: auto; width: 180px; }
+  .hero { padding: 64px 0; }
+  .philosophy { padding: 72px 0; }
+  .vision { margin-bottom: 40px; }
+  .beliefs li { grid-template-columns: 1fr; gap: 6px; padding: 28px 0; }
+  .beliefs .belief-num, .beliefs .belief-label { display: inline; }
+  .about .wrap { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .intro-photo { flex-basis: auto; width: 140px; }
+  .contact { padding: 72px 0; }
 }
 
 /* Statement-Abschnitte (Übergabe-Texte, Abschlussabsätze) */
